@@ -4,7 +4,8 @@ on: [push, pull_request]
 
 jobs:
   build:
-    name: Build on JDK ${{ matrix.jdk }}
+    name: Build on JDK ${{ matrix.jdk }} ${{ matrix.os }}
+    if: always()
     strategy:
       matrix:
         jdk: [ '8', '11' ]
